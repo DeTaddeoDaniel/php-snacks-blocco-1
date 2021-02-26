@@ -48,11 +48,17 @@
             
             $email = test_input($_GET["email"]);
 
-            if(!preg_match("/[@]/", $email)){
+            if(!strpos($email, '@') && !strpos($email, '.')){
+                $emailErr = "Simboli mancanti, manca @ e .";
+            }
+
+            // if(!preg_match("/[@]/", $email)){
+            if(!strpos($email, '@')){
                 $emailErr = "Inserire un email, manca @";
             }
 
-            elseif(!preg_match("/[.]/", $email)){
+            // elseif(!preg_match("/[.]/", $email)){
+            if(!strpos($email, '.')){
                 $emailErr = "Inserire un punto, manca .";
             }
             
@@ -80,7 +86,6 @@
         $classResult = $result = "";
 
         if( empty($nameErr) && empty($emailErr)  && empty($etaErr) ){
-
             $classResult = "success";
             $result = "acceso consentito";
         } else {
