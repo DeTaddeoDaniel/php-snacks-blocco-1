@@ -52,7 +52,7 @@ Olimpia Milano - Cantù | 55 - 60 -->
         
         <ul>
             <li class="border">
-                <p >Match <?php echo $index + 1 ?> è finita</p>
+                <p >Match <?php echo $index + 1 ?> è finito</p>
                 
                 <p>
                     
