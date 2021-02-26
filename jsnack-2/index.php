@@ -74,6 +74,19 @@
             }
             
         }
+
+        //-------------------------------------------------------
+
+        $classResult = $result = "";
+
+        if( empty($nameErr) && empty($emailErr)  && empty($etaErr) ){
+
+            $classResult = "success";
+            $result = "acceso consentito";
+        } else {
+            $classResult = "error";
+            $result = "accesso negato";
+        }
     }
 
     function test_input($data) {
@@ -117,19 +130,16 @@
 
 </form>
 
-<?php
-    echo "<h2>Your Input:</h2>";
+<p>L'accesso corrisponde ai valori precedentemente salvati (submit)</p>
 
-    echo $name;
-    echo "<br>";
+<h2>
+    Accesso:
+    <span class="<?php echo $classResult ?>">
+        <?php echo $result ?>
+    </span>
+</h2>
 
-    echo $email;
-    echo "<br>";
 
-    echo $eta;
-    echo "<br>";
-?>
-?>
 
 </body>
 </html>
